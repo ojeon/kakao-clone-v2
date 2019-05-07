@@ -1,0 +1,218 @@
+.chat-body {
+  padding: 110px 0px;
+  background-image: url("../images/congruent_pentagon.png");
+  min-height: 1000vh;
+}
+
+.header-wrapper {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  padding: 10px 20px 0px 20px;
+  background-color: white;
+  box-shadow: 0 18px 36px -18px rgba(0, 0, 0, 0.3),
+    0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  z-index: 2;
+}
+
+.chat__messages:not(:first-child) {
+  border-top: 2px dashed rgba(255, 255, 255, 0.5);
+}
+
+.chat__messages {
+  padding: 30px 20px 0px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden; /* 처음에 translateX 때문에 아래 스크롤바 생기는 것 방지 */
+}
+
+.chat__timestamp {
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 16px -8px,
+    rgba(0, 0, 0, 0.024) 0px -6px 16px -6px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.chat__message {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+.message--incoming {
+  align-self: flex-start;
+}
+
+.message--incoming .friend__avatar--sm {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  animation: spin 1s linear infinite;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px,
+    rgba(0, 0, 0, 0.024) 0px -6px 16px -6px;
+  /* 애니메이션이 진행되고 있는 경우 z-index 없는 header-wrapper보다 위에 쌓임.
+이 말이 이해가 안 가면 아래 message--incoming의 animation에 forwards 넣어볼 것.
+겉보기에는 변화가 없지만 forwards를 넣으면 애니메이션을 계속 유지하는 상태가 되므로
+z-index: 2;를 작성하지 않은 header-wrapper보다 위에 쌓이게 됨. */
+}
+
+@keyframes spin {
+  from {
+    transform: none;
+  }
+  to {
+    transform: rotateY(1turn);
+  }
+}
+
+.message--sent {
+  align-self: flex-end;
+}
+
+.message__author {
+  margin-bottom: 5px;
+  display: block; /* 1)message__author은 span, 즉 inline이라 display: block;을 하지 않으면 margin-bottom 불가 2)#2.15 */
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.message__bubble {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px,
+    rgba(0, 0, 0, 0.024) 0px -6px 16px -6px;
+  color: white;
+  display: block; /* #2.15 */
+}
+
+.message--incoming .message__bubble {
+  border-top-left-radius: 0px;
+  background-image: linear-gradient(to right, #606c88, #3f4c6b);
+}
+
+.message--sent .message__bubble {
+  border-top-right-radius: 0px;
+  background-image: linear-gradient(to right, #237a57, #093028);
+}
+
+.message__timestamp {
+  align-self: flex-end;
+  padding: 0px 5px;
+  font-size: 12px;
+  opacity: 0.8; /* 설정하면 z-index 없는 heder-wrapper 보다 위에 쌓임 */
+}
+
+.chat__write-container {
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.chat__icons--left {
+  position: absolute;
+  left: 10px;
+}
+
+.chat__icons--right {
+  position: absolute;
+  right: 10px;
+}
+
+.chat__write {
+  margin: 0 auto;
+  bottom: 0px;
+  width: 100%;
+  border-radius: 0;
+  padding: 20px 60px;
+  border: none;
+  font-size: 14px;
+  transition: width 0.5s ease-in-out, box-shadow 0.5s ease-in-out,
+    border-radius 0.5s ease-in-out, transform 0.5s ease-in-out;
+  /* 여기에 transition: all 하면 background-color(쓸 경우)나 padding까지 같이 transition 됨.
+  그렇다고 여기 지우고 .chat__write:focus에 transition: all 하면 focus 해제될 때 transition이 안 됨.
+  + 그런데 뒤에 애니메이션 infinite로 추가하면 box-hadow가 계속 바뀌는 와중에 focus 해제 되는 거라
+  돌아올 때 box-shadow는 자연스럽게 안 되는 듯. */
+}
+
+.chat__write:focus {
+  outline: none;
+  width: 80%;
+  transform: translateY(-100px);
+  border-radius: 40px;
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+    0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  animation: float 3s linear infinite forwards;
+}
+
+@keyframes float {
+  0% {
+    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+      0 18px 36px -18px rgba(0, 0, 0, 0.3),
+      0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  }
+  50% {
+    box-shadow: 0 30px 60px -60px rgba(50, 50, 93, 0.25),
+      0 18px 36px -18px rgba(0, 0, 0, 0.3),
+      0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  }
+  100% {
+    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+      0 18px 36px -18px rgba(0, 0, 0, 0.3),
+      0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  }
+}
+
+.chat__icons {
+  font-size: 18px;
+  transition: opacity 0.3s ease-in-out;
+  /* 여기도 마찬가지로 opacity 따로 안 적으면 font-size까지 같이 변함.
+  (처음에 font-size .chat__icons--left 에 따로 적었다가 새로고침하면 왜 커지는지 몰랐음)
+  chat__write:focus ~ .chat__icons에 transitinon: all 쓰면 focus 해제될 때 안 됨. */
+}
+
+.chat__write:focus ~ .chat__icons {
+  opacity: 0;
+}
+
+@keyframes incoming-anim {
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.message--incoming {
+  animation: incoming-anim 0.5s ease-out;
+}
+
+@keyframes sent-anim {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.message--sent {
+  animation: sent-anim 0.5s ease-out;
+}

@@ -1,0 +1,119 @@
+#avatar--samoyed {
+  background-image: url("../images/samoyed.jpg");
+}
+#avatar--giraffe {
+  background-image: url("../images/giraffe.jpg");
+}
+#avatar--lion {
+  background-image: url("../images/lion.jpg");
+}
+#avatar--plus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fce006;
+  font-size: 30px;
+  color: #3b1e1e;
+}
+
+.friends__title {
+  margin-top: 15px;
+  border-top: 1px solid #f7f7f7;
+  padding-top: 15px;
+  font-size: 12px;
+  opacity: 0.7;
+  margin-bottom: 15px;
+}
+
+.friend {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.friend:not(:first-child) {
+  margin-top: 20px;
+}
+
+.friend__avatar--sm,
+.friend__avatar--md,
+.friend__avatar--lg {
+  border-radius: 40%;
+  background-size: cover;
+  background-position: center;
+  margin-right: 15px;
+}
+
+.friend__avatar--sm {
+  width: 50px;
+  height: 50px;
+}
+
+.friend__avatar--md {
+  width: 60px;
+  height: 60px;
+}
+
+.friend__avatar--lg {
+  width: 70px;
+  height: 70px;
+  background-image: url("../images/squirrel.jpg");
+}
+
+.friend__column {
+  display: flex;
+  align-items: center;
+}
+
+.friend__name {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.friend__status,
+.friend__bottom-text,
+.friend__timestamp {
+  opacity: 0.6;
+}
+
+.friend__status,
+.friend__timestamp {
+  font-size: 12px;
+}
+
+.friend__bottom-text {
+  font-size: 14px;
+}
+
+.friend__plus-number {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.friend__now-listening {
+  padding: 3px 10px;
+  border-radius: 14px;
+  border: 2px solid #00cd3c;
+}
+
+.friend__now-listening span {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.friend__now-listening i {
+  font-size: 12px;
+  color: #00cd3c;
+  margin-left: 3px;
+}
+
+.friend__add-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 11px 15px;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  font-size: 15px;
+}

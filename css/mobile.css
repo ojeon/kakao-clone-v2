@@ -1,0 +1,24 @@
+.big-screen {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fce006;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  line-height: 1.5;
+  display: none;
+  z-index: 3; /* .chat .header-wrapper { z-index: 2 }; */
+}
+
+@media screen and (min-width: 550px) {
+  .big-screen {
+    display: flex;
+  }
+}

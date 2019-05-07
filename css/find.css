@@ -1,0 +1,26 @@
+.find__header-list {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0px;
+  /* margin 주면 제대로 적용 안 됨. margin-collapsing 때문.
+  .find__header에도 마찬가지 이유로 margin 적용 안 됨.
+  구체적으로,
+  겹치는 마진: header ~ find__header(or find__header-list) ~ find__recommended(or find__title)
+  적용되는 마진: '내가 준 margin - 겹치는 부분', 즉 안 겹치는 만큼만 margin 나타남.*/
+}
+
+.find__header-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.header-btn__icon {
+  font-size: 24px;
+}
+
+.header-btn__title {
+  margin-top: 10px;
+  font-size: 14px;
+}

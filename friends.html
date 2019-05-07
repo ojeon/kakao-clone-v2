@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Friends | Kakao Clone</title>
+  </head>
+  <body>
+    <div class="status-bar">
+      <div class="status-bar__column">
+        <span class="stsatus-bar__clock">13:54</span>
+      </div>
+      <div class="status-bar__column">
+        <i class="fas fa-clock"></i>
+        <i class="fas fa-volume-mute"></i>
+        <i class="fas fa-wifi"></i>
+        <i class="fas fa-signal"></i>
+        <span class="status-bar__battery-level">100%</span>
+        <i class="fas fa-battery-full"></i>
+      </div>
+    </div>
+    <header class="header">
+      <div class="header__header-column">
+        <h1 class="header__title">Friends</h1>
+      </div>
+      <div class="header__header-column">
+        <span class="header__icon">
+          <i class="fas fa-search"></i>
+        </span>
+        <span class="header__icon">
+          <i class="fas fa-cog"></i>
+        </span>
+      </div>
+    </header>
+    <main class="friends">
+      <header class="friends__header">
+        <div class="friends__friend friend">
+          <div class="friend__column">
+            <div class="friend__avatar--lg"></div>
+            <div class="friend__content">
+              <span class="friend__name">Squirrel</span>
+              <span class="friend__status">I love acorns</span>
+            </div>
+          </div>
+        </div>
+      </header>
+      <ul class="friends__list">
+        <h5 class="friends__title">Plus Friend</h5>
+        <li class="friends__friend friend">
+          <div class="friend__column">
+            <div class="friend__avatar--sm" id="avatar--plus">
+              <i class="fab fa-pinterest"></i>
+            </div>
+            <div class="friend__content">
+              <span class="friend__name">Plus Friend</span>
+            </div>
+          </div>
+          <div class="friend__column">
+            <span class="friend__plus-number">1 ></span>
+          </div>
+        </li>
+      </ul>
+      <ul class="friends__list">
+        <h5 class="friends__title">Friends 2</h5>
+        <li class="friends__friend friend">
+          <div class="friend__column">
+            <div class="friend__avatar--sm" id="avatar--samoyed"></div>
+            <div class="friend__content">
+              <span class="friend__name">Samoyed</span>
+              <span class="friend__status">Yeah!</span>
+            </div>
+          </div>
+        </li>
+        <li class="friends__friend friend">
+          <div class="friend__column">
+            <div class="friend__avatar--sm" id="avatar--giraffe"></div>
+            <div class="friend__content">
+              <span class="friend__name">Giraffe</span>
+              <span class="friend__status">kokoa tribe</span>
+            </div>
+          </div>
+          <div class="friend__column">
+            <div class="friend__now-listening">
+              <span>Circle of Life - Car...</span>
+              <i class="fas fa-play"></i>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </main>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__list-item">
+          <a href="friends.html" class="nav__list-link">
+            <i class="fas fa-user"></i>
+          </a>
+        </li>
+        <li class="nav__list-item">
+          <a href="index.html" class="nav__list-link">
+            <div class="nav__badge">1</div>
+            <i class="far fa-comment"></i>
+          </a>
+        </li>
+        <li class="nav__list-item">
+          <a href="find.html" class="nav__list-link">
+            <i class="fas fa-search"></i>
+          </a>
+        </li>
+        <li class="nav__list-item">
+          <a href="more.html" class="nav__list-link">
+            <i class="fas fa-ellipsis-h"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="big-screen">
+      <span class="big-screen__text">Please make your screen small!</span>
+    </div>
+  </body>
+</html>
