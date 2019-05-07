@@ -16,9 +16,12 @@
   cursor: pointer;
 }
 
-.more__btn:not(:nth-child(3)),
-.more__suggestion:not(:nth-child(3)) {
+.more__btn:not(:nth-child(3)) {
   margin-right: 40px;
+}
+
+.more__suggestion:not(:nth-child(3)) {
+  margin-right: 30px;
 }
 
 .more__btn-icon,
